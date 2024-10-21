@@ -1,0 +1,126 @@
+/* Style.css */
+
+/* Set the font family and general styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black; /* Background color changed to black */
+    color: white; /* Text color changed to white for better contrast */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container for main content */
+.container {
+    max-width: 800px; /* Increased width for better layout */
+    margin: auto;
+    background: #222; /* Darker background for the container */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+}
+
+/* Heading styles */
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+/* Success and error text styles */
+.text-danger {
+    color: red;
+}
+
+.text-success {
+    color: green;
+}
+
+/* Navigation bar styles */
+nav {
+    background: #333; /* Dark background for the nav */
+    color: white;
+    padding: 10px;
+}
+
+/* Navigation links */
+nav a {
+    color: white; /* Keep nav links white */
+    margin-left: 20px;
+}
+
+/* Table styling */
+table {
+    width: 100%; /* Table should take full width */
+    border-collapse: collapse; /* Remove spacing between cells */
+    margin-top: 20px; /* Add some margin at the top */
+}
+
+/* Table header styling */
+th {
+    background-color: #444; /* Darker header background */
+    color: white; /* Header text color */
+    padding: 10px; /* Add padding */
+}
+
+/* Table cell styling */
+td {
+    background-color: #333; /* Darker background for table cells */
+    color: white; /* Cell text color */
+    padding: 10px; /* Add padding */
+    border: 1px solid #555; /* Add border to cells */
+}
+
+/* Button styling */
+button {
+    background-color: #007bff; /* Blue background for buttons */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Close button */
+.close {
+    color: #aaa; /* Close button color */
+    float: right; /* Align to the right */
+    font-size: 28px; /* Font size for close button */
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Change color on hover */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
+}
+.table-light th {
+    background-color: #f8f9fa; /* Light background */
+    color: #212529; /* Dark text */
+}
+
