@@ -1,0 +1,5 @@
+put this in command prompt
+python -m http.server 8000
+
+open this link
+http://localhost:8000/exp.html

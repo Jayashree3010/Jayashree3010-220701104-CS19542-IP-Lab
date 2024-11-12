@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Class Timetable</h1>
+    <table border="1">
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr>
+            <td>09:00 - 10:00</td>
+            <td>Mathematics</td>
+            <td>Physics</td>
+            <td rowspan="2">Chemistry</td>
+            <td>Biology</td>
+            <td>History</td>
+        </tr>
+        <tr>
+            <td>10:00 - 11:00</td>
+            <td>English</td>
+            <td>Geography</td>
+            <td>Physical Education</td>
+            <td>Computer Science</td>
+        </tr>
+        <tr>
+            <td>11:00 - 12:00</td>
+            <td colspan="2">Break</td>
+            <td>Mathematics</td>
+            <td>English</td>
+            <td>Geography</td>
+        </tr>
+        <tr>
+            <td>12:00 - 01:00</td>
+            <td>Physics</td>
+            <td>Biology</td>
+            <td>History</td>
+            <td>Computer Science</td>
+            <td rowspan="2">Chemistry</td>
+        </tr>
+        <tr>
+            <td>01:00 - 02:00</td>
+            <td>Physical Education</td>
+            <td>Mathematics</td>
+            <td>English</td>
+            <td>Geography</td>
+        </tr>
+    </table>
+</body>
+</html>

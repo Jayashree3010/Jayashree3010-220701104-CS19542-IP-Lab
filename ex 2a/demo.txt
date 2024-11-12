@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Image Map Coordinates</title>
+    <style>
+        #coordinates {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            padding: 5px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Click on the Image to Get Coordinates</h1>
+
+<!-- Image to be mapped -->
+<img src="india.jpg" id="image" alt="Image to map" width="" height="">
+
+<!-- Display coordinates -->
+<div id="coordinates">Coordinates: (x, y)</div>
+
+<script>
+    document.getElementById('image').addEventListener('click', function(event) {
+        var rect = event.target.getBoundingClientRect();
+        var x = event.clientX - rect.left;
+        var y = event.clientY - rect.top;
+        document.getElementById('coordinates').textContent = 'Coordinates: (' + x + ', ' + y + ')';
+    });
+</script>
+
+</body>
+</html>

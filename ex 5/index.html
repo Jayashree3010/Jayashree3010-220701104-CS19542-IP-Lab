@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management System</title>
+    <script>
+        function validateForm() {
+            const title = document.forms["bookForm"]["title"].value;
+            const author = document.forms["bookForm"]["author"].value;
+            const price = document.forms["bookForm"]["price"].value;
+            if (title === "" || author === "" || price === "") {
+                alert("All fields must be filled out.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Library Management System</h1>
+    <div id="content">
+        <a href="LibraryServlet?action=viewAll">View All Books</a>
+    </div>
+</body>
+</html>

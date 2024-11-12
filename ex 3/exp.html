@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="password"],
+        select,
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            margin: 20px 0 0;
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+        }
+        input[type="reset"] {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Course Registration Form</h1>
+        <form id="registrationForm" method="post" action="#">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <span id="nameError" class="error"></span>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <span id="emailError" class="error"></span>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <span id="genderError" class="error"></span>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile">
+            <span id="mobileError" class="error"></span>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" cols="36"></textarea>
+            <span id="addressError" class="error"></span>
+
+            <label for="pincode">Pincode:</label>
+            <input type="text" id="pincode" name="pincode">
+            <span id="pincodeError" class="error"></span>
+
+            <label for="state">State:</label>
+            <select id="state" name="state">
+                <option value="">Select State</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+            </select>
+            <span id="stateError" class="error"></span>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <span id="passwordError" class="error"></span>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword">
+            <span id="confirmPasswordError" class="error"></span>
+
+            <input type="submit" value="Submit Your Entries">
+            <input type="reset" value="Clear Your Entries">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').onsubmit = function(event) {
+            let isValid = true;
+
+            // Name validation
+            let name = document.getElementById('name').value;
+            if (name === "") {
+                document.getElementById('nameError').innerText = "Name is required";
+                isValid = false;
+            } else {
+                document.getElementById('nameError').innerText = "";
+            }
+
+            // Email validation
+            let email = document.getElementById('email').value;
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "") {
+                document.getElementById('emailError').innerText = "Email is required";
+                isValid = false;
+            } else if (!emailRegex.test(email)) {
+                document.getElementById('emailError').innerText = "Invalid email format";
+                isValid = false;
+            } else {
+                document.getElementById('emailError').innerText = "";
+            }
+
+            // Gender validation
+            let gender = document.getElementById('gender').value;
+            if (gender === "") {
+                document.getElementById('genderError').innerText = "Gender is required";
+                isValid = false;
+            } else {
+                document.getElementById('genderError').innerText = "";
+            }
+
+            // Mobile number validation
+            let mobile = document.getElementById('mobile').value;
+            let mobileRegex = /^\d{10}$/;
+            if (mobile === "") {
+                document.getElementById('mobileError').innerText = "Mobile number is required";
+                isValid = false;
+            } else if (!mobileRegex.test(mobile)) {
+                document.getElementById('mobileError').innerText = "Mobile number must be exactly 10 digits";
+                isValid = false;
+            } else {
+                document.getElementById('mobileError').innerText = "";
+            }
+
+            // Address validation
+            let address = document.getElementById('address').value;
+            if (address === "") {
+                document.getElementById('addressError').innerText = "Address is required";
+                isValid = false;
+            } else {
+                document.getElementById('addressError').innerText = "";
+            }
+
+            // Pincode validation
+            let pincode = document.getElementById('pincode').value;
+            let pincodeRegex = /^\d{6}$/;
+            if (pincode === "") {
+                document.getElementById('pincodeError').innerText = "Pincode is required";
+                isValid = false;
+            } else if (!pincodeRegex.test(pincode)) {
+                document.getElementById('pincodeError').innerText = "Pincode must be exactly 6 digits";
+                isValid = false;
+            } else {
+                document.getElementById('pincodeError').innerText = "";
+            }
+
+            // State validation
+            let state = document.getElementById('state').value;
+            if (state === "") {
+                document.getElementById('stateError').innerText = "State is required";
+                isValid = false;
+            } else {
+                document.getElementById('stateError').innerText = "";
+            }
+
+            // Password validation
+            let password = document.getElementById('password').value;
+            let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,15}$/;
+            if (password === "") {
+                document.getElementById('passwordError').innerText = "Password is required";
+                isValid = false;
+            } else if (!passwordRegex.test(password)) {
+                document.getElementById('passwordError').innerText = "Password must be 8-15 characters long and include at least one letter and one number";
+                isValid = false;
+            } else {
+                document.getElementById('passwordError').innerText = "";
+            }
+
+            // Confirm password validation
+            let confirmPassword = document.getElementById('confirmPassword').value;
+            if (confirmPassword === "") {
+                document.getElementById('confirmPasswordError').innerText = "Confirm password is required";
+                isValid = false;
+            } else if (confirmPassword !== password) {
+                document.getElementById('confirmPasswordError').innerText = "Passwords do not match";
+                isValid = false;
+            } else {
+                document.getElementById('confirmPasswordError').innerText = "";
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+                alert("Please correct the errors in the form before submitting.");
+            }
+        };
+    </script>
+</body>
+</html>

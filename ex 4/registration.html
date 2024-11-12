@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Course Registration Form</h2>
+    <form id="registrationForm">
+        <div class="form-group">
+            <label for="name">Student Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="rollno">Roll Number:</label>
+            <input type="text" id="rollno" name="rollno" required>
+        </div>
+        <div class="form-group">
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" required> Male
+            <input type="radio" id="female" name="gender" value="Female" required> Female
+        </div>
+        <div class="form-group">
+            <label for="year">Year:</label>
+            <input type="text" id="year" name="year" required>
+        </div>
+        <div class="form-group">
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" required>
+        </div>
+        <div class="form-group">
+            <label for="section">Section:</label>
+            <input type="text" id="section" name="section" required>
+        </div>
+        <div class="form-group">
+            <label for="mobile_no">Mobile Number:</label>
+            <input type="text" id="mobile_no" name="mobile_no" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+        </div>
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" required>
+        </div>
+        <div class="form-group">
+            <label for="pincode">Pincode:</label>
+            <input type="text" id="pincode" name="pincode" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const rollno = document.getElementById('rollno').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const year = document.getElementById('year').value;
+            const department = document.getElementById('department').value;
+            const section = document.getElementById('section').value;
+            const mobile_no = document.getElementById('mobile_no').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const country = document.getElementById('country').value;
+            const pincode = document.getElementById('pincode').value;
+
+            // Display the result
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <h2>Student Course Registration Details</h2>
+                <p><b>Name:</b> ${name}</p>
+                <p><b>Roll Number:</b> ${rollno}</p>
+                <p><b>Gender:</b> ${gender}</p>
+                <p><b>Year:</b> ${year}</p>
+                <p><b>Department:</b> ${department}</p>
+                <p><b>Section:</b> ${section}</p>
+                <p><b>Mobile Number:</b> ${mobile_no}</p>
+                <p><b>Email ID:</b> ${email}</p>
+                <p><b>Address:</b> ${address}</p>
+                <p><b>City:</b> ${city}</p>
+                <p><b>Country:</b> ${country}</p>
+                <p><b>Pincode:</b> ${pincode}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
